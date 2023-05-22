@@ -6,7 +6,9 @@ import { useSelector } from 'react-redux';
 const RtkQyery = () => {
 
     const { data: allproductdata } = useGetallProductQuery();
-    console.log('allproductdata', allproductdata)
+    console.log('allproductdata', allproductdata.products)
+
+    const abc = allproductdata.products;
 
     const { searcResult } = useSelector((state) => state.app);
     console.log('searchitem---', searcResult)
@@ -14,9 +16,10 @@ const RtkQyery = () => {
 
     return (
         <>
-            <div className="container-fluid">
+            {/* <div className="container-fluid">
                 <div className="row">
-                    {allproductdata.products?.map((itm) => (
+                    {abc?.map((itm) => {
+                    return(
                         <div className="col-md-3" key={itm.id}>
                             <div className="card">
                                 <div className="card-body">
@@ -29,9 +32,13 @@ const RtkQyery = () => {
                                 </div>
                             </div>
                         </div>
-                    ))}
+                    
+                    )
+                    
+                    }
+                    )}
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }
