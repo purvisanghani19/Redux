@@ -1,27 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 
-//action----------------------------------------------
-
-// export const createUser = createAsyncThunk("createUser", async (data, { rejectWithValue }) => {
-
-//     const response = await fetch("https://64685964e99f0ba0a822d791.mockapi.io/crud", 
-//     {
-//         method: 'POST',
-//         headers: {
-//             "Contant-type": "application/json",
-//         },
-//         body: JSON.stringify(data)
-//     })
-//     try {
-//         const result = await response.json();
-//         return result;
-//     } catch (error) {
-//         return rejectWithValue(error.response)
-//     }
-// })
-
-
+//insert-------------------------------------
 export const createUser = createAsyncThunk("createUser", async (data, { rejectWithValue }) => {
     const response = await fetch("https://64685964e99f0ba0a822d791.mockapi.io/crud",
         {
@@ -96,15 +76,20 @@ export const useDetail = createSlice({
         loading: false,
         error: null,
         searchData: [],
+        searcResult:[]
     },
 
-    
-  reducers: {
-    searchUser: (state, action) => {
-      console.log(action.payload);
-      state.searchData = action.payload;
+
+    reducers: {
+        searchUser: (state, action) => {
+            console.log(action.payload);
+            state.searchData = action.payload;
+        },
+        result: (state, action) => {
+            // console.log(action.payload);
+            state.searcResult = action.payload;
+        },
     },
-  },
 
 
     extraReducers: {
@@ -168,4 +153,4 @@ export const useDetail = createSlice({
 });
 
 export default useDetail.reducer;
-export const { searchUser } = useDetail.actions;
+export const { searchUser ,result } = useDetail.actions;

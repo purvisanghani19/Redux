@@ -13,6 +13,7 @@ const CustomModal = ({ id, open, setOpen }) => {
 
 
     return (
+
         <div className='modalBackground'>
             <div className='modalContainer'>
                 <button onClick={() => setOpen(false)}>close</button>
@@ -22,6 +23,7 @@ const CustomModal = ({ id, open, setOpen }) => {
                 <p>{singleuser[0].gender}</p>
             </div>
         </div>
+        
     )
 }
 

@@ -6,6 +6,7 @@ import Create from './components/Create';
 import Navbar from './components/Navbar';
 import Read from './components/Read';
 import Upadate from './components/Upadate';
+import RtkQyery from './componant(rtk-query)/RtkQyery';
 
 
 function App() {
@@ -39,6 +40,8 @@ function App() {
       app
       </div> */}
 
+      {/* crud with rtk */}
+
       <div className='App'>
         <BrowserRouter>
           <Navbar />
@@ -46,6 +49,7 @@ function App() {
             <Route path='/' element={<Create />} />
             <Route path='/read' element={<Read />} />
             <Route path='/edit/:id' element={<Upadate />} />
+            <Route path='/rtk' element={<RtkQyery  />} />
           </Routes>
         </BrowserRouter>
       </div>

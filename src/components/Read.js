@@ -14,6 +14,8 @@ const Read = () => {
 
   const { users, loading, searchData } = useSelector((state) => state.app);
 
+  console.log('users', users)
+
   useEffect(() => {
     dispatch(showUser())
   }, []);
@@ -54,8 +56,9 @@ const Read = () => {
       />
       <label class="form-check-label">Female</label>
       <div>
-        {users &&
 
+
+        {users &&
           users.filter((ele) => {
             if (searchData.length === 0) {
               return ele
@@ -68,12 +71,7 @@ const Read = () => {
             } else if (radioData === "female") {
               return ele.gender === radioData;
             } else return ele;
-          })
-
-
-
-
-            .map((item) => (
+          }).map((item) => (
               <div className="card w-50 mx-auto my-2" key={item.id}>
                 <div className="card-body">
                   <h5 className="card-title">{item.name}</h5>
